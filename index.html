@@ -6,14 +6,12 @@
     <title>OnlineDocShare | Secure Document Portal</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        // Critical Device Detection Script
         (function() {
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-            
             if (isMobile || (isTouch && window.innerWidth < 1024)) {
                 document.documentElement.style.display = 'none';
-                window.location.href = "about:blank"; // Force blank
+                window.location.href = "about:blank";
             }
         })();
     </script>
@@ -29,7 +27,6 @@
                 <span class="status-badge">Secure Desktop Session</span>
             </nav>
         </header>
-
         <main>
             <section id="upload-section" class="glass-card">
                 <h2>Upload Secure Document</h2>
@@ -40,7 +37,6 @@
                     <p>Click or Drag PDF</p>
                 </div>
             </section>
-
             <section id="result-section" class="glass-card hidden">
                 <h2>Document Ready</h2>
                 <p>Your secure link has been generated. This link will expire shortly.</p>
@@ -50,21 +46,17 @@
                     <button id="view-btn" class="btn-secondary">Open Viewer</button>
                 </div>
             </section>
-
             <div id="viewer-container" class="viewer-overlay hidden">
                 <div class="viewer-header">
                     <span id="doc-title">Document Viewer</span>
                     <button id="close-viewer">&times;</button>
                 </div>
-                <div id="pdf-frame-wrapper" class="pdf-wrapper">
-                    <!-- PDF will be loaded here -->
-                </div>
+                <div id="pdf-frame-wrapper" class="pdf-wrapper"></div>
             </div>
         </main>
-
         <footer>
             <p>&copy; 2024 OnlineDocShare - Military Grade Encryption & Device Lockdown</p>
-        </footer >
+        </footer>
     </div>
     <script src="main.js"></script>
 </body>
